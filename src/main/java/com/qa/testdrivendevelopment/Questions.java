@@ -28,8 +28,24 @@ public class Questions {
 	 * multChar("Hi-There") → "HHHiii---TTThhheeerrreee"
 	 */
 	public String multiChar(String input) {
-		return "";
-	}
+	       
+        StringBuilder str
+        = new StringBuilder();
+       
+        for(int i=0;i<input.length();i++)
+        {
+             char c = input.charAt(i);
+
+             for(int j=0;j<3;j++) {
+                 str.append(c);
+             }
+       
+        }
+       
+        String resultString = str.toString();
+       
+        return resultString;
+    }
 
 	/**
 	 * Return the string (backwards) that is between the first and last appearance
@@ -44,9 +60,30 @@ public class Questions {
 	 * HINT: "a" == "a" if false HINT: "a".equals("a") is true
 	 */
 
-	public String sandwichFilling(String sandwich) {
-		return "";
-	}
+public String sandwichFilling(String sandwich) {
+        
+        sandwich=sandwich.toLowerCase();
+        
+        StringBuilder str
+        = new StringBuilder();
+        
+        int first = sandwich.indexOf("bread");
+        
+        String firstCut = sandwich.substring(first+5);
+        String toCut=str.append(firstCut).reverse().toString();
+        
+        int second =toCut.indexOf("daerb");
+        System.out.println(second);
+        if(second==-1)
+        {
+            return "";
+        }
+        else {
+            String output = toCut.substring(second+5);
+            return output; 
+        }
+        
+    }
 
 	/**
 	 * Given three ints, a b c, one of them is small, one is medium and one is
